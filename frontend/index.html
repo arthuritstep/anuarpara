@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Mini Bank</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="bank-container">
+        <h1>💳 NeoBank Клиент</h1>
+        
+        <!-- Авторизация / Вход -->
+        <div id="authSection" class="section">
+            <h3>Вход в систему</h3>
+            <input type="text" id="usernameInput" placeholder="Введите ваше имя...">
+            <button onclick="loginUser()">Войти / Создать счет</button>
+        </div>
+
+        <!-- Банковский кабинет (скрыт до входа) -->
+        <div id="bankSection" class="section hidden">
+            <div class="card-info">
+                <h2>Привет, <span id="userNameDisplay"></span>!</h2>
+                <p>Ваш баланс: <strong id="balanceDisplay">0</strong> тенге</p>
+            </div>
+
+            <div class="actions">
+                <input type="number" id="amountInput" placeholder="Сумма...">
+                <button class="btn-green" onclick="makeTransaction('deposit')">Пополнить</button>
+                <button class="btn-red" onclick="makeTransaction('withdraw')">Снять</button>
+            </div>
+
+            <h3>История операций</h3>
+            <ul id="txList"></ul>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
